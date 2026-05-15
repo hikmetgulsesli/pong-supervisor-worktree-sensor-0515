@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pong Arcade - Paused</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#444749",
+                        "surface-tint": "#c4c7c9",
+                        "on-tertiary": "#003915",
+                        "primary-fixed": "#e0e3e5",
+                        "inverse-surface": "#dae2fd",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#626567",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#6bff8f",
+                        "on-background": "#dae2fd",
+                        "secondary": "#b9c7e0",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "on-secondary-container": "#abb9d2",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "tertiary-fixed": "#6bff8f",
+                        "surface-container-highest": "#2d3449",
+                        "inverse-primary": "#5c5f61",
+                        "surface-container": "#171f33",
+                        "on-tertiary-fixed": "#002109",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "on-primary-fixed": "#191c1e",
+                        "on-primary": "#2d3133",
+                        "primary-fixed-dim": "#c4c7c9",
+                        "primary": "#ffffff",
+                        "surface-dim": "#0b1326",
+                        "background": "#0b1326",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "secondary-container": "#3c4a5e",
+                        "on-surface": "#dae2fd",
+                        "surface-variant": "#2d3449",
+                        "outline": "#8e9193",
+                        "surface-container-high": "#222a3d",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#283044",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-container": "#007432",
+                        "on-secondary": "#233144",
+                        "primary-container": "#e0e3e5",
+                        "surface-container-low": "#131b2e",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#d5e3fd",
+                        "on-surface-variant": "#c4c7c9",
+                        "surface": "#0b1326",
+                        "on-primary-fixed-variant": "#444749"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-lg": "48px",
+                        "margin-sm": "24px",
+                        "court-padding": "8px",
+                        "touch-target": "44px"
+                    },
+                    "fontFamily": {
+                        "display-score": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"],
+                        "label-caps": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "button-text": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-score": ["96px", { "lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "button-text": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden relative font-body-md text-body-md antialiased selection:bg-primary selection:text-background">
+<!-- Simulated Game Background (Level 1 Surface/Court) -->
+<div class="absolute inset-0 flex items-center justify-center p-gutter md:p-margin-sm z-0">
+<div class="w-full max-w-[1200px] aspect-video border border-outline-variant bg-surface relative flex items-center justify-center overflow-hidden">
+<!-- Center Dashed Line -->
+<div class="absolute top-0 bottom-0 left-1/2 -ml-[1px] w-[2px] bg-transparent border-l-2 border-dashed border-outline-variant/50"></div>
+<!-- Simulated Scoreboard -->
+<div class="absolute top-margin-sm w-full flex justify-between px-margin-lg opacity-40">
+<div class="font-display-score text-display-score text-primary w-1/2 text-center">11</div>
+<div class="font-display-score text-display-score text-primary w-1/2 text-center">08</div>
+</div>
+<!-- Simulated Paddles & Ball -->
+<div class="absolute left-court-padding top-[40%] w-4 h-32 bg-primary"></div>
+<div class="absolute right-court-padding top-[20%] w-4 h-32 bg-primary"></div>
+<div class="absolute left-[60%] top-[45%] w-6 h-6 bg-primary rounded-none"></div>
+</div>
+</div>
+<!-- Pause Overlay (60% opacity with backdrop blur per style guide rules for menus over game) -->
+<div class="absolute inset-0 z-50 bg-background/80 backdrop-blur-md flex items-center justify-center p-gutter transition-all duration-300">
+<!-- Modal Container -->
+<div class="w-full max-w-sm bg-surface/40 border border-outline-variant p-margin-sm md:p-margin-lg flex flex-col gap-margin-sm backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+<!-- Header Section -->
+<div class="flex flex-col items-center justify-center mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2 opacity-80">System Status</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary uppercase tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                    Paused
+                </h1>
+</div>
+<!-- Action Buttons Stack -->
+<div class="flex flex-col gap-3 w-full">
+<!-- Primary Action: Resume Game -->
+<button class="h-touch-target w-full bg-primary text-background font-button-text text-button-text uppercase tracking-widest border border-primary flex items-center justify-center gap-3 transition-all duration-200 hover:shadow-[0_0_12px_theme(colors.primary)] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill">play_arrow</span>
+                    Resume Game
+                </button>
+<!-- Secondary Action: Restart -->
+<button class="h-touch-target w-full bg-surface-variant text-primary font-button-text text-button-text uppercase tracking-widest border border-outline-variant flex items-center justify-center gap-3 transition-all duration-200 hover:bg-primary hover:text-background hover:border-primary hover:shadow-[0_0_12px_theme(colors.primary)] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+                    Restart
+                </button>
+<!-- Secondary Action: Options -->
+<button class="h-touch-target w-full bg-surface-variant text-primary font-button-text text-button-text uppercase tracking-widest border border-outline-variant flex items-center justify-center gap-3 transition-all duration-200 hover:bg-primary hover:text-background hover:border-primary hover:shadow-[0_0_12px_theme(colors.primary)] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Options
+                </button>
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant my-2"></div>
+<!-- Destructive/Exit Action: Return to Main Menu -->
+<button class="h-touch-target w-full bg-surface-variant text-error font-button-text text-button-text uppercase tracking-widest border border-outline-variant flex items-center justify-center gap-3 transition-all duration-200 hover:bg-error hover:text-background hover:border-error hover:shadow-[0_0_12px_theme(colors.error)] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                    Main Menu
+                </button>
+</div>
+</div>
+</div>
+</body></html>
