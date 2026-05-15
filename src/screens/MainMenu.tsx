@@ -7,7 +7,7 @@
 // 3. Wire interactive controls through the typed actions prop
 // 4. Replace placeholder data with props/state
 
-import { ChevronRight, Circle, Settings } from "lucide-react";
+import { BookOpen, ChevronRight, Circle, CirclePlay, Gamepad2, Settings } from "lucide-react";
 
 
 export type MainMenuActionId = "button-1-1" | "button-2-2" | "button-3-3" | "button-4-4" | "start-new-game-5" | "resume-6" | "easy-7" | "medium-8" | "hard-9" | "leaderboard-10" | "settings-11" | "how-to-play-12";
@@ -62,12 +62,12 @@ export function MainMenu({ actions }: MainMenuProps) {
       <div className="w-full space-y-4 flex flex-col">
       {/* Primary Action */}
       <button className="h-touch-target w-full bg-outline-variant text-primary font-button-text text-button-text rounded flex items-center justify-center hover:bg-primary hover:text-background transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background group" type="button" data-action-id="start-new-game-5" onClick={actions?.["start-new-game-5"]}>
-      <Circle className="mr-2 group-hover:text-background" aria-hidden={true} focusable="false" />
+      <Gamepad2 className="mr-2 group-hover:text-background" aria-hidden={true} focusable="false" />
                           Start New Game
                       </button>
       {/* Disabled Action */}
       <button className="h-touch-target w-full bg-surface-container text-on-surface-variant font-button-text text-button-text rounded flex items-center justify-center cursor-not-allowed opacity-50 border border-outline-variant/30" disabled={true} type="button" data-action-id="resume-6" onClick={actions?.["resume-6"]}>
-      <Circle className="mr-2" aria-hidden={true} focusable="false" />
+      <CirclePlay className="mr-2" aria-hidden={true} focusable="false" />
                           Resume
                       </button>
       {/* Settings Segmented Control */}
@@ -97,7 +97,7 @@ export function MainMenu({ actions }: MainMenuProps) {
       </button>
       <button className="h-touch-target w-full flex items-center justify-between px-4 text-on-surface hover:bg-surface-variant hover:text-primary rounded transition-colors group" type="button" data-action-id="how-to-play-12" onClick={actions?.["how-to-play-12"]}>
       <div className="flex items-center font-button-text text-button-text">
-      <Circle className="mr-3 text-outline-variant group-hover:text-primary transition-colors" aria-hidden={true} focusable="false" />
+      <BookOpen className="mr-3 text-outline-variant group-hover:text-primary transition-colors" aria-hidden={true} focusable="false" />
                                   How to Play
                               </div>
       <ChevronRight className="text-outline-variant" aria-hidden={true} focusable="false" />

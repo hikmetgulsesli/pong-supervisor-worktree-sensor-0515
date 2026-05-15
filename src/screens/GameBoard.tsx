@@ -7,7 +7,7 @@
 // 3. Wire interactive controls through the typed actions prop
 // 4. Replace placeholder data with props/state
 
-import { Circle, Pause, Settings } from "lucide-react";
+import { ChevronDown, ChevronUp, Pause, Settings } from "lucide-react";
 
 
 export type GameBoardActionId = "button-1-1" | "button-2-2" | "button-3-3" | "button-4-4";
@@ -76,10 +76,10 @@ export function GameBoard({ actions }: GameBoardProps) {
       <div className="md:hidden w-full max-w-[1200px] mt-4 flex justify-between px-gutter shrink-0 h-32">
       <div className="flex flex-col justify-between h-full w-24">
       <button className="flex-1 bg-surface border border-outline-variant rounded mb-2 active:bg-primary active:text-background flex items-center justify-center text-primary transition-colors" type="button" data-action-id="button-3-3" onClick={actions?.["button-3-3"]}>
-      <Circle aria-hidden={true} focusable="false" />
+      <ChevronUp aria-hidden={true} focusable="false" />
       </button>
       <button className="flex-1 bg-surface border border-outline-variant rounded mt-2 active:bg-primary active:text-background flex items-center justify-center text-primary transition-colors" type="button" data-action-id="button-4-4" onClick={actions?.["button-4-4"]}>
-      <Circle aria-hidden={true} focusable="false" />
+      <ChevronDown aria-hidden={true} focusable="false" />
       </button>
       </div>
       <div className="flex items-center justify-center text-on-surface-variant font-label-caps text-label-caps opacity-50">
