@@ -57,6 +57,10 @@ export default function App() {
 
   const mainMenuActions = useCallback(
     () => ({
+      'button-1-1': actions.goToOptions,
+      'button-2-2': actions.goToControls,
+      'button-3-3': actions.goToOptions,
+      'button-4-4': actions.goToControls,
       'start-new-game-5': actions.startGame,
       'resume-6': actions.resumeGame,
       'easy-7': () => actions.setDifficulty('easy'),
@@ -106,6 +110,8 @@ export default function App() {
 
   const gameOptionsActions = useCallback(
     () => ({
+      'button-1-1': actions.goToOptions,
+      'button-2-2': actions.goToControls,
       'reset-to-default-3': actions.resetOptions,
       'save-and-close-4': actions.closeOptions,
     }),
@@ -114,6 +120,8 @@ export default function App() {
 
   const controlsHelpActions = useCallback(
     () => ({
+      'button-1-1': actions.goToOptions,
+      'button-2-2': actions.goToControls,
       'back-to-menu-3': actions.goToMenu,
     }),
     [actions]
