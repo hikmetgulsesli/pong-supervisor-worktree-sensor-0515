@@ -1,0 +1,46 @@
+.app-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-background, #0b1326);
+  color: var(--color-on-surface, #dae2fd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-hud {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.score {
+  font-family: var(--font-display-score, "Hanken Grotesk"), sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary, #ffffff);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.score.player {
+  color: var(--color-tertiary, #ffffff);
+}
+
+.score.ai {
+  color: var(--color-error, #ffb4ab);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-root * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
