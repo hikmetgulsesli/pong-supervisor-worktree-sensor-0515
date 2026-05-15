@@ -1,0 +1,254 @@
+[
+  {
+    "screenId": "71106df3c7d449b69aadec8f63dc2500",
+    "title": "Main Menu",
+    "componentName": "MainMenu",
+    "file": "src/screens/MainMenu.tsx",
+    "buttons": 12,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "button-4-4",
+        "kind": "button",
+        "label": "Button 4",
+        "index": 3
+      },
+      {
+        "id": "start-new-game-5",
+        "kind": "button",
+        "label": "Start New Game",
+        "index": 4
+      },
+      {
+        "id": "resume-6",
+        "kind": "button",
+        "label": "Resume",
+        "index": 5
+      },
+      {
+        "id": "easy-7",
+        "kind": "button",
+        "label": "Easy",
+        "index": 6
+      },
+      {
+        "id": "medium-8",
+        "kind": "button",
+        "label": "Medium",
+        "index": 7
+      },
+      {
+        "id": "hard-9",
+        "kind": "button",
+        "label": "Hard",
+        "index": 8
+      },
+      {
+        "id": "leaderboard-10",
+        "kind": "button",
+        "label": "Leaderboard",
+        "index": 9
+      },
+      {
+        "id": "settings-11",
+        "kind": "button",
+        "label": "Settings",
+        "index": 10
+      },
+      {
+        "id": "how-to-play-12",
+        "kind": "button",
+        "label": "How to Play",
+        "index": 11
+      }
+    ]
+  },
+  {
+    "screenId": "a0adf8f2f74641108a61682a8455c0f9",
+    "title": "Game Options",
+    "componentName": "GameOptions",
+    "file": "src/screens/GameOptions.tsx",
+    "buttons": 4,
+    "inputs": 5,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "reset-to-default-3",
+        "kind": "button",
+        "label": "Reset to Default",
+        "index": 2
+      },
+      {
+        "id": "save-and-close-4",
+        "kind": "button",
+        "label": "Save and Close",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "screenId": "8ee2f6b0fdee46c4837b037883276022",
+    "title": "Game Board",
+    "componentName": "GameBoard",
+    "file": "src/screens/GameBoard.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "button-4-4",
+        "kind": "button",
+        "label": "Button 4",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "screenId": "439024f789ad48c3b0240f37e7364836",
+    "title": "Game Over",
+    "componentName": "GameOver",
+    "file": "src/screens/GameOver.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "play-again-1",
+        "kind": "button",
+        "label": "Play Again",
+        "index": 0
+      },
+      {
+        "id": "share-score-2",
+        "kind": "button",
+        "label": "Share Score",
+        "index": 1
+      },
+      {
+        "id": "leaderboard-3",
+        "kind": "button",
+        "label": "Leaderboard",
+        "index": 2
+      },
+      {
+        "id": "main-menu-4",
+        "kind": "button",
+        "label": "Main Menu",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "screenId": "2149d7154f8b4cee8c41240521f5fd7c",
+    "title": "Pause Overlay",
+    "componentName": "PauseOverlay",
+    "file": "src/screens/PauseOverlay.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "resume-game-1",
+        "kind": "button",
+        "label": "Resume Game",
+        "index": 0
+      },
+      {
+        "id": "restart-2",
+        "kind": "button",
+        "label": "Restart",
+        "index": 1
+      },
+      {
+        "id": "options-3",
+        "kind": "button",
+        "label": "Options",
+        "index": 2
+      },
+      {
+        "id": "main-menu-4",
+        "kind": "button",
+        "label": "Main Menu",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "screenId": "17f4e4b4d2ce453494e4500db2a8a234",
+    "title": "Controls Help",
+    "componentName": "ControlsHelp",
+    "file": "src/screens/ControlsHelp.tsx",
+    "buttons": 3,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "back-to-menu-3",
+        "kind": "button",
+        "label": "Back to Menu",
+        "index": 2
+      }
+    ]
+  }
+]
